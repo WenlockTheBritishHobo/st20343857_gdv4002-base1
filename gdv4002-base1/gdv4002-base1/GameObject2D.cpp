@@ -57,4 +57,29 @@ void GameObject2D::render() {
 	glPopMatrix();
 }
 
-void GameObject2D::update(double tDelta) {}
+float growOrShrink = 0.2f;
+
+void GameObject2D::update(double tDelta) 
+{
+	if (size.x < 0.25f)
+	{
+		growOrShrink = -growOrShrink;
+	}
+	else
+	{	
+		// nothing
+	}
+
+	if (size.x > 0.3f)
+	{
+		growOrShrink = -growOrShrink;
+	}
+	else
+	{	
+		// nothing
+	}
+
+	float sizeTime = growOrShrink * tDelta;
+	
+	size += glm::vec2(sizeTime, sizeTime);
+}

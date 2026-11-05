@@ -2,7 +2,7 @@
 
 // Engine.cpp ver 1.4
 
-#define ENGINE_USE_IMGUI
+//#define ENGINE_USE_IMGUI
 
 #pragma region Engine variables
 
@@ -186,7 +186,7 @@ void engineMainLoop() {
 				overrideUpdateFn(window, tDelta);
 			}
 		}
-			
+
 		// Poll events ie. user input (key presses, mouse events)
 		glfwPollEvents();
 
