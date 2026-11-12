@@ -23,12 +23,18 @@ int main(void) {
 	// Setup game scene objects here
 	//
 
-	GameObject2D* player = addObject("player", glm::vec2(1.0f, 1.0f));
+	GameObject2D* player1 = addObject("player1", glm::vec2(1.0f, 1.0f));
+	GameObject2D* player2 = addObject("player2", glm::vec2(-1.0f, -1.0f));
 
-	player->size = glm::vec2(0.25f, 0.25f);
+	player1->size = glm::vec2(0.25f, 0.25f);
+	player2->size = glm::vec2(0.25f, 0.25f);
 
 	TextureProperties prop;
-	player->textureID = fiLoadTexture("Resources\\Textures\\player1_ship.png", prop);
+	player1->textureID = fiLoadTexture("Resources\\Textures\\player1_ship.png", prop.NearestFilterTexture());
+	player2->textureID = fiLoadTexture("Resources\\Textures\\player1_ship.png", prop.NearestFilterTexture());
+
+	GameObject2D* player1Object = getObject("player1");
+	GameObject2D* player2Object = getObject("player2");
 	
 	//
 	// Set callback functions

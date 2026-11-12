@@ -11,6 +11,7 @@ public:
 
 	// angle of rotation in radians
 	float			orientation = 0.0f; 
+	float growOrShrink = 0.2f;
 
 	// scale (default 1.0)
 	glm::vec2		size = glm::vec2(1.0f, 1.0f); 
